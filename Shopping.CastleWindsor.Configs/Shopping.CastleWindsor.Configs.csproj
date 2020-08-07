@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{733B1E82-EE37-4AEF-B839-0FEC07DBB877}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shopping.CastleWindsor.Configs</RootNamespace>
+    <AssemblyName>Shopping.CastleWindsor.Configs</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MobileApiServiceInstaller.cs" />
+    <Compile Include="PanelApiServiceInstaller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingConfigInstaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kernel.Notify.Message.Implements\Kernel.Notify.Message.Implements.csproj">
+      <Project>{55A5B470-0B15-43CC-85D6-9BFB42E9A851}</Project>
+      <Name>Kernel.Notify.Message.Implements</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.ApiService.Controllers\Shopping.ApiService.Controllers.csproj">
+      <Project>{049006C2-88A4-477C-A5A2-A1FCC88C3882}</Project>
+      <Name>Shopping.ApiService.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.AsyncCommanBus\Shopping.AsyncCommanBus.csproj">
+      <Project>{64C3F0F5-BDB9-4D33-B1B2-F050DB3C61A7}</Project>
+      <Name>Shopping.AsyncCommanBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.CommandHandler\Shopping.CommandHandler.csproj">
+      <Project>{35CDCD30-F5DF-409B-A7FF-70FC36931C82}</Project>
+      <Name>Shopping.CommandHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.DomainModel\Shopping.DomainModel.csproj">
+      <Project>{9C9951CD-09A4-491A-9AC3-80B9BF3ED58E}</Project>
+      <Name>Shopping.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Infrastructure.Core\Shopping.Infrastructure.Core.csproj">
+      <Project>{3BA2EEAA-F8BD-47FD-B7EA-FA2119D26BCD}</Project>
+      <Name>Shopping.Infrastructure.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Mobile.ApiService.Controllers\Shopping.Mobile.ApiService.Controllers.csproj">
+      <Project>{5D5B8273-9100-4F67-AE88-46F4BB7E20C5}</Project>
+      <Name>Shopping.Mobile.ApiService.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.QueryService.Implements\Shopping.QueryService.Implements.csproj">
+      <Project>{D4D40E24-FCCE-4757-9455-4211BB031496}</Project>
+      <Name>Shopping.QueryService.Implements</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Repository.Read.Interface\Shopping.Repository.Read.Interface.csproj">
+      <Project>{42F56300-0B23-4F11-A1EE-C005B7A6C506}</Project>
+      <Name>Shopping.Repository.Read.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Repository.Read\Shopping.Repository.Read.csproj">
+      <Project>{550C351F-815A-485A-B73B-DF187A5FBB58}</Project>
+      <Name>Shopping.Repository.Read</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Repository.Write.Interface\Shopping.Repository.Write.Interface.csproj">
+      <Project>{01BC4A2A-047A-406A-A50E-5F9F47DEA6EA}</Project>
+      <Name>Shopping.Repository.Write.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Repository.Write\Shopping.Repository.Write.csproj">
+      <Project>{636E41F6-2F32-458C-899D-829FAECA0F0E}</Project>
+      <Name>Shopping.Repository.Write</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

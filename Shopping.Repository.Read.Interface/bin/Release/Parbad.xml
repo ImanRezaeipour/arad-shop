@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Parbad</name>
+    </assembly>
+    <members>
+        <member name="T:Parbad.Configurations.GatewaysConfiguration">
+            <summary>
+            It holds all gateways configurations data.
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigureMellat(Parbad.Providers.Mellat.MellatGatewayConfiguration)">
+            <summary>
+            Configure Mellat gateway
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigureParbadVirtualGateway(Parbad.Providers.Parbad.ParbadVirtualGatewayConfiguration)">
+            <summary>
+            Configure Parbad Virtual Gateway
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigureParsian(Parbad.Providers.Parsian.ParsianGatewayConfiguration)">
+            <summary>
+            Configure Parsian gateway
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigurePasargad(Parbad.Providers.Pasargad.PasargadGatewayConfiguration)">
+            <summary>
+            Configure Pasargad gateway
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigureSaman(Parbad.Providers.Saman.SamanGatewayConfiguration)">
+            <summary>
+            Configure Saman gateway
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigureTejarat(Parbad.Providers.Tejarat.TejaratGatewayConfiguration)">
+            <summary>
+            Configure Tejarat gateway
+            </summary>
+        </member>
+        <member name="M:Parbad.Configurations.GatewaysConfiguration.ConfigureIranKish(Parbad.Providers.IranKish.IranKishGatewayConfiguration)">
+            <summary>
+            Configure IranKish gateway
+            </summary>
+        </member>
+        <member name="T:Parbad.Configurations.LoggerSettings">
+            <summary>
+            Logger settings.
+            </summary>
+        </member>
+        <member name="P:Parbad.Configurations.LoggerSettings.Provider">
+            <summary>
+            A logger that logs payment operations.
+            </summary>
+        </member>
+        <member name="P:Parbad.Configurations.LoggerSettings.LogViewerHandlerPath">
+            <summary>
+            If you defined any handlers for Parbad.Web.LogViewer.ParbadLogViewerHandler inside web.config, then set path of handler.
+            </summary>
+        </member>
+        <member name="P:Parbad.Configurations.ParbadConfiguration.Gateways">
+            <summary>
+            Gateways configuration
+            </summary>
+        </member>
+        <member name="P:Parbad.Configurations.ParbadConfiguration.Storage">
+            <summary>
+            Storage for saving and loading payment's data.
+            <para>TemporaryMemoryStorage is assigned by default.</para>
+            <para>You can also implement your custom storage by implementing Parbad.Infrastructure.Data.Storage and then assign it to this property.</para>
+            </summary>
+        </member>
+        <member name="P:Parbad.Configurations.ParbadConfiguration.Logger">
+            <summary>
+            Logger settings
+            </summary>
+        </member>
+        <member name="T:Parbad.Core.Invoice">
+            <summary>
+            Invoice class
+            </summary>
+        </member>
+        <member name="M:Parbad.Core.Invoice.#ctor(System.Int64,System.Int64,System.String)">
+            <summary>
+            Initializes new Invoice object.
+            </summary>
+            <param name="orderNumber">Order number. Must be unique for each requests.</param>
+            <param name="amount">Amount to pay (IR-Rial)</param>
+            <param name="callBackUrl">
+            A complete URL in your website to verify the Invoice. Clients will come back to this URL after they pay the money in the Gateway.
+            <para>A complete URL would be like: "http://www.mywebsite.com/payment/verify"</para>
+            </param>
+        </member>
+        <member name="P:Parbad.Core.Invoice.OrderNumber">
+            <summary>
+            Get order number.
+            </summary>
+        </member>
+        <member name="P:Parbad.Core.Invoice.Amount">
+            <summary>
+            Amount to pay (IR-Rial)
+            </summary>
+        </member>
+        <member name="P:Parbad.Core.Invoice.CallbackUrl">
+            <summary>
+            A complete URL in your website to verify the Invoice. Clients will come back to this URL for verifying the Invoice, after they pay the money in the Gateway.
+            <para>A complete URL would be like: "http://www.mywebsite.com/payment/verify"</para>
+            </summary>
+        </member>
+        <member name="T:Parbad.Core.RefundInvoice">
+            <summary>
+            RefundInvoice class to refund a payment.
+            </summary>
+        </member>
+        <member name="M:Parbad.Core.RefundInvoice.#ctor(System.Int64)">
+            <inheritdoc />
+            <summary>
+            Initializes RefundInvoice class with Order Number of payment.
+            </summary>
+            <param name="orderNumber">Order Number of payment that must be refund.</param>
+        </member>
+        <member name="M:Parbad.Core.RefundInvoice.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Initializes RefundInvoice class with Order Number of payment and amount. To refund the complete amount of payment, set 0 (zero) or use first constructor.
+            </summary>
+            <param name="orderNumber">Order Number of payment that must be refund.</param>
+            <param name="amountToRefund">Amount to refund. To refund the complete amount of payment, set 0 (zero) or use first constructor.</param>
+        </member>
+        <member name="P:Parbad.Core.RefundInvoice.OrderNumber">
+            <summary>
+            Order Number of payment
+            </summary>
+        </member>
+        <member name="P:Parbad.Core.RefundInvoice.AmountToRefund">
+            <summary>
+            Amount to refund
+            </summary>
+        </member>
+        <member name="T:Parbad.Core.RefundResultStatus">
+            <summary>
+            Refund result status.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.RefundResultStatus.Failed">
+            <summary>
+            Refund failed.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.RefundResultStatus.Success">
+            <summary>
+            Refund succeed.
+            </summary>
+        </member>
+        <member name="T:Parbad.Core.RequestResult">
+            <summary>
+            Request's result details.
+            </summary>
+        </member>
+        <member name="P:Parbad.Core.RequestResult.Status">
+            <summary>
+            Status of result.
+            </summary>
+        </member>
+        <member name="P:Parbad.Core.RequestResult.ReferenceId">
+            <summary>
+            A unique Reference Id that gateway sent.
+            </summary>
+        </member>
+        <member name="P:Parbad.Core.RequestResult.Message">
+            <summary>
+            Result message
+            </summary>
+        </member>
+        <member name="T:Parbad.Core.RequestResultExtensions">
+            <summary>
+            Extensions for RequestResult object.
+            </summary>
+        </member>
+        <member name="M:Parbad.Core.RequestResultExtensions.Process(Parbad.Core.RequestResult,System.Web.HttpContext)">
+            <summary>
+            Processes RequestResult object. If result is successful then prepares the gateway, otherwise it decides to write message to the HttpResponse.
+            </summary>
+            <param name="requestResult">RequestResult object</param>
+            <param name="httpContext">HttpContext object</param>
+        </member>
+        <member name="M:Parbad.Core.RequestResultExtensions.Process(Parbad.Core.RequestResult,System.Web.HttpContext,System.Action)">
+            <summary>
+            Processes RequestResult object. If result is successful then prepares the gateway, otherwise it decides to write message to the HttpResponse or invoke your onRequestFailedHandler.
+            </summary>
+            <param name="requestResult">RequestResult object</param>
+            <param name="httpContext">HttpContext object</param>
+            <param name="onRequestFailedHandler">If RequestResult is not successful then this delegate will be invoke.</param>
+        </member>
+        <member name="T:Parbad.Core.RequestResultStatus">
+            <summary>
+            Request result status.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.RequestResultStatus.Failed">
+            <summary>
+            Request failed.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.RequestResultStatus.Success">
+            <summary>
+            Request succeed.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.RequestResultStatus.DuplicateOrderNumber">
+            <summary>
+            Request failed because Order Number is used before.
+            </summary>
+        </member>
+        <member name="T:Parbad.Core.VerifyResultStatus">
+            <summary>
+            Verify result status.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.VerifyResultStatus.Failed">
+            <summary>
+            Verify failed.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.VerifyResultStatus.Success">
+            <summary>
+            Verify succeed.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.VerifyResultStatus.AlreadyVerified">
+            <summary>
+            Verify already verified.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.VerifyResultStatus.PaymentTimeExpired">
+            <summary>
+            The time for end-user to pay is expired.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.VerifyResultStatus.NotValid">
+            <summary>
+            Payment is not valid.
+            </summary>
+        </member>
+        <member name="F:Parbad.Core.VerifyResultStatus.CanceledProgrammatically">
+            <summary>
+            Payment verification is canceled by calling VerifyInvoice.Cancel() method.
+            </summary>
+        </member>
+        <member name="T:Parbad.Infrastructure.Data.Providers.SqlServerStorage">
+            <summary>
+            A storage that uses SQL Server to read and write data.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Data.Providers.SqlServerStorage.#ctor(System.String,System.String)">
+            <summary>
+            Initializes SqlServerStorage by connection string and the name of payment's table.
+            </summary>
+            <param name="connectionString">connection string for connecting to SQL Server.</param>
+            <param name="paymentsTableName">The name of payment's table.</param>
+        </member>
+        <member name="T:Parbad.Infrastructure.Data.Providers.TemporaryMemoryStorage">
+            <inheritdoc />
+            <summary>
+            An encrypted temporary memory that keeps data for a specific time.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Data.Providers.TemporaryMemoryStorage.#ctor(System.TimeSpan)">
+            <summary>
+            Initializes new instance of TemporaryMemoryStorage
+            </summary>
+            <param name="invoiceLifeTime">The lifetime of each invoice. Minimum time is 20 minutes.</param>
+        </member>
+        <member name="T:Parbad.Infrastructure.Data.Storage">
+            <summary>
+            Storage for saving and loading payment's data.
+            </summary>
+        </member>
+        <member name="T:Parbad.Infrastructure.Logging.Logger">
+            <summary>
+            Abstract logger that logs payment operations.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Logging.Logger.Write(Parbad.Infrastructure.Logging.Log)">
+            <summary>
+            Writes log.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Logging.Logger.Read(System.Int32,System.Int32)">
+            <summary>
+            Reads logs from specific page number with specific page size.
+            </summary>
+        </member>
+        <member name="T:Parbad.Infrastructure.Logging.Loggers.FileLogger">
+            <summary>
+            An abstract logger that saves log into file.
+            </summary>
+        </member>
+        <member name="P:Parbad.Infrastructure.Logging.Loggers.FileLogger.PhysicalFolderPath">
+            <summary>
+            Physical folder's path on disk to save logs.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Logging.Loggers.FileLogger.WriteFile(System.String,System.Byte[])">
+            <summary>
+            Writes contents into a file in specific path.
+            </summary>
+            <param name="filePath">Path of file to write</param>
+            <param name="contents">Contents to write into file</param>
+        </member>
+        <member name="M:Parbad.Infrastructure.Logging.Loggers.FileLogger.GenerateFileName(Parbad.Infrastructure.Logging.Log)">
+            <summary>
+            Generates a name for creating file.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Logging.Loggers.FileLogger.GetFileContents(Parbad.Infrastructure.Logging.Log)">
+            <summary>
+            Gets file's contents as an array of bytes.
+            </summary>
+        </member>
+        <member name="T:Parbad.Infrastructure.Logging.Loggers.Xml.XmlFileLogger">
+            <inheritdoc />
+            <summary>
+            A logger that saves logs as XML files.
+            </summary>
+        </member>
+        <member name="M:Parbad.Infrastructure.Logging.Loggers.Xml.XmlFileLogger.#ctor(System.String)">
+            <summary>
+            Initializes XmlFileLogger
+            </summary>
+            <param name="physicalFolderPath">Physical folder's path on disk to save XML files.</param>
+        </member>
+        <member name="T:Parbad.Payment">
+            <summary>
+            General Payment class
+            </summary>
+        </member>
+        <member name="M:Parbad.Payment.Request(Parbad.Providers.Gateway,Parbad.Core.Invoice)">
+            <summary>
+            Sends pay request to selected gateway.
+            </summary>
+            <param name="gateway">Gateway to pay</param>
+            <param name="invoice">Invoice object</param>
+        </member>
+        <member name="M:Parbad.Payment.RequestAsync(Parbad.Providers.Gateway,Parbad.Core.Invoice)">
+            <summary>
+            Sends pay request to selected gateway.
+            </summary>
+            <param name="gateway">Gateway to pay</param>
+            <param name="invoice">Invoice object</param>
+        </member>
+        <member name="M:Parbad.Payment.Verify(System.Web.HttpContext,System.Action{Parbad.VerifyInvoice})">
+            <summary>
+            Verifies request that comes from a gateway.
+            </summary>
+            <param name="httpContext">HttpContext object of current request.</param>
+            <param name="verifyInvoiceHandler">This handler would be called before verifying the invoice. You can check the invoice with your database and decide whether or not you should call the Cancel method.</param>
+        </member>
+        <member name="M:Parbad.Payment.VerifyAsync(System.Web.HttpContext,System.Action{Parbad.VerifyInvoice})">
+            <summary>
+            Verifies request that comes from a gateway.
+            </summary>
+            <param name="httpContext">HttpContext object of current request.</param>
+            <param name="verifyInvoiceHandler">This handler would be called before verifying the invoice. You can check the invoice with your database and decide whether or not you should call the Cancel method.</param>
+        </member>
+        <member name="M:Parbad.Payment.Refund(Parbad.Core.RefundInvoice)">
+            <summary>
+            Refunds a specific payment by its Order Number.
+            </summary>
+            <param name="refundInvoice">RefundInvoice object</param>
+        </member>
+        <member name="M:Parbad.Payment.RefundAsync(Parbad.Core.RefundInvoice)">
+            <summary>
+            Refunds a specific payment by its Order Number.
+            </summary>
+            <param name="refundInvoice">RefundInvoice object</param>
+        </member>
+        <member name="M:Parbad.Payment.TryLog(System.Func{Parbad.Infrastructure.Logging.Log})">
+            <summary>
+            Log without throwing any exceptions
+            </summary>
+        </member>
+        <member name="T:Parbad.Providers.Gateway">
+            <summary>
+            Online payment providers.
+            </summary>
+        </member>
+        <member name="F:Parbad.Providers.Gateway.IranKish">
+            <summary>
+            Warning: It's not tested yet.
+            </summary>
+        </member>
+        <member name="T:Parbad.Providers.IranKish.IranKishGateway">
+            <summary>
+            IranKish gateway. (Warning: It's not tested yet)
+            </summary>
+        </member>
+        <member name="T:Parbad.Providers.IranKish.IranKishGatewayConfiguration">
+            <summary>
+            IranKish gateway's configuration
+            </summary>
+        </member>
+        <member name="M:Parbad.Providers.IranKish.IranKishGatewayConfiguration.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of IranKishGatewayConfiguration.
+            </summary>
+            <param name="merchantId">Merchant ID</param>
+        </member>
+        <member name="P:Parbad.Providers.IranKish.IranKishGatewayConfiguration.MerchantId">
+            <summary>
+            Merchant ID
+            </summary>
+        </member>
+        <member name="P:Parbad.Providers.Mellat.MellatGatewayConfiguration.IsTestModeEnabled">
+            <summary>
+            Enables Mellat test gateway. Default value is false
+            </summary>
+        </member>
+        <member name="M:Parbad.Providers.Parbad.ParbadVirtualGatewayConfiguration.#ctor(System.String)">
+            <inheritdoc />
+            <summary>
+            Initializes ParbadVirtualGatewayConfiguration.
+            </summary>
+            <param name="gatewayHandlerPath">If you defined any handlers for Parbad.Web.Gateway.ParbadVirtualGatewayHandler inside web.config, then set path of handler.</param>
+        </member>
+        <member name="M:Parbad.Providers.Parbad.ParbadVirtualGatewayConfiguration.#ctor(System.String,System.String)">
+            <summary>
+            Initializes ParbadVirtualGatewayConfiguration with a password for accessing gateway.
+            </summary>
+            <param name="gatewayHandlerPath">If you defined any handlers for Parbad.Web.Gateway.ParbadVirtualGatewayHandler inside web.config, then set path of handler.</param>
+            <param name="gatewayPassword">A password for accessing gateway</param>
+        </member>
+        <member name="P:Parbad.Providers.Parbad.ParbadVirtualGatewayConfiguration.GatewayHandlerPath">
+            <summary>
+            If you defined any handlers for Parbad.Web.Gateway.ParbadVirtualGatewayHandler inside web.config, then set path of handler.
+            </summary>
+        </member>
+        <member name="P:Parbad.Providers.Parbad.ParbadVirtualGatewayConfiguration.GatewayPassword">
+            <summary>
+            A password for accessing gateway.
+            </summary>
+        </member>
+        <member name="T:Parbad.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Parbad.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Parbad.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Parbad.Resource.LogViewerHtml">
+             <summary>
+               Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+            
+            &lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+            &lt;head&gt;
+                &lt;title&gt;Parbad Logs&lt;/title&gt;
+                &lt;meta charset=&quot;utf-8&quot;&gt;
+                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+                &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; /&gt;
+                &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jqu [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:Parbad.Resource.ParbadVirtualGatewayRequestHtml">
+            <summary>
+              Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;Parbad Gateway&lt;/title&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; body{margin-top: 30px;}.panel-title{font-weight: bold;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;row&quot;&gt; &lt;div class=&quot;col-md-6 col-md-offset-3&quot;&gt; &lt;div cla [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Parbad.Resource.ParbadVirtualGatewayResultHtml">
+            <summary>
+              Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;Parbad Gateway&lt;/title&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; body{margin-top: 30px;}.panel-title{font-weight: bold;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;row&quot;&gt; &lt;div class=&quot;col-md-6 col-md-offset-3&quot;&gt; &lt;div cla [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Parbad.Resource.UnexpectedErrorText">
+            <summary>
+              Looks up a localized string similar to خطای نامشخص.
+            </summary>
+        </member>
+        <member name="T:Parbad.VerifyInvoice">
+            <summary>
+            A context for checking the payment before finishing verify operation.
+            </summary>
+        </member>
+        <member name="P:Parbad.VerifyInvoice.Gateway">
+            <summary>
+            Gateway of payment.
+            </summary>
+        </member>
+        <member name="P:Parbad.VerifyInvoice.OrderNumber">
+            <summary>
+            Order Number of payment.
+            </summary>
+        </member>
+        <member name="P:Parbad.VerifyInvoice.ReferenceId">
+            <summary>
+            Reference ID of payment.
+            </summary>
+        </member>
+        <member name="M:Parbad.VerifyInvoice.Cancel">
+            <summary>
+            Cancel the operation.
+            </summary>
+        </member>
+        <member name="M:Parbad.VerifyInvoice.Cancel(System.String)">
+            <summary>
+            Cancel the operation.
+            </summary>
+            <param name="reason">Reason to cancel the operation.</param>
+        </member>
+        <member name="T:Parbad.Web.Gateway.ParbadVirtualGatewayHandler">
+            <summary>
+            Parbad Virtual Gateway HttpHandler to test website's functionality with a virtual payment.
+            </summary>
+        </member>
+    </members>
+</doc>

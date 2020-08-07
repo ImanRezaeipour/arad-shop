@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35CDCD30-F5DF-409B-A7FF-70FC36931C82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shopping.CommandHandler</RootNamespace>
+    <AssemblyName>Shopping.CommandHandler</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GreenPipes, Version=2.1.4.118, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\GreenPipes.2.1.4\lib\net452\GreenPipes.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit, Version=5.3.2.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.5.3.2\lib\net452\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId, Version=3.0.1.17, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewId.3.0.1\lib\net452\NewId.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.1\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Parbad, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Parbad.1.1.3\lib\net45\Parbad.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\ApplicationSettings\ApplictionSettingCommandHandler.cs" />
+    <Compile Include="CommandHandlers\BaseEntities\BaseEntitiesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Brands\BrandCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Categories\CategoryCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Comments\CommentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Discounts\DiscountPercentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Factors\FactorCommandHandler.cs" />
+    <Compile Include="CommandHandlers\FakeIos\FakeIosCommandHandler.cs" />
+    <Compile Include="CommandHandlers\MarketerSalaryPayments\MarketerSalaryPaymentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Marketers\MarketerCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Messages\PrivateMessageCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Messages\PublicMessageCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Notifications\NotificationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\OrdersSuggestions\OrderSuggestionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Order\PrivateOrderCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Persons\CustomerCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Persons\PersonCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Persons\ShopCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ProductsSuggestions\ProductSeggestionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Products\ProductCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Complaints\ComplaintCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Payments\PaymentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Promoters\PromoterCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ShopAcceptors\ShopAcceptorCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ShopCustomerSubsetSettlements\ShopCustomerSubsetSettlementCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Sliders\SliderCommandHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kernel.Notify.Message.Interfaces\Kernel.Notify.Message.Interfaces.csproj">
+      <Project>{C3D810C5-A909-4CCE-BD64-6DA8AEF9BEF3}</Project>
+      <Name>Kernel.Notify.Message.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.AsyncCommanBus\Shopping.AsyncCommanBus.csproj">
+      <Project>{64C3F0F5-BDB9-4D33-B1B2-F050DB3C61A7}</Project>
+      <Name>Shopping.AsyncCommanBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Commands\Shopping.Commands.csproj">
+      <Project>{CE1A642B-BF79-4495-B114-EF58D6A8B0D2}</Project>
+      <Name>Shopping.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.DomainModel\Shopping.DomainModel.csproj">
+      <Project>{9C9951CD-09A4-491A-9AC3-80B9BF3ED58E}</Project>
+      <Name>Shopping.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Infrastructure.Core\Shopping.Infrastructure.Core.csproj">
+      <Project>{3BA2EEAA-F8BD-47FD-B7EA-FA2119D26BCD}</Project>
+      <Name>Shopping.Infrastructure.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Infrastructure\Shopping.Infrastructure.csproj">
+      <Project>{2EF382E0-D87B-4BAE-8567-72BE607BBD8A}</Project>
+      <Name>Shopping.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Repository.Write.Interface\Shopping.Repository.Write.Interface.csproj">
+      <Project>{01BC4A2A-047A-406A-A50E-5F9F47DEA6EA}</Project>
+      <Name>Shopping.Repository.Write.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Shared\Shopping.Shared.csproj">
+      <Project>{0961143B-290C-4CE3-B060-EBEDA4F659B9}</Project>
+      <Name>Shopping.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68D30F2D-B725-4D4A-A4F7-49F636D0D752}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shopping.QueryModel</RootNamespace>
+    <AssemblyName>Shopping.QueryModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implements\BaseEntities\ZoneDto.cs" />
+    <Compile Include="Implements\Brands\BrandDto.cs" />
+    <Compile Include="Implements\Categories\CategoryBaseWithImageDto.cs" />
+    <Compile Include="Implements\Categories\CategoryImageDto.cs" />
+    <Compile Include="Implements\Categories\CategoryWithProductDto.cs" />
+    <Compile Include="Implements\Complaints\ComplaintDto.cs" />
+    <Compile Include="Implements\Dashboards\DashboardCountDto.cs" />
+    <Compile Include="Implements\Discounts\DiscountBaseDto.cs" />
+    <Compile Include="Implements\Discounts\DiscountPercentShopSellDto.cs" />
+    <Compile Include="Implements\Discounts\PercentDiscountSumReportDto.cs" />
+    <Compile Include="Implements\Discounts\PercentDiscountWithProductDto.cs" />
+    <Compile Include="Implements\Discounts\ProductDiscountDto.cs" />
+    <Compile Include="Implements\Factors\FactorDto.cs" />
+    <Compile Include="Implements\Factors\FactorReportFinancialDto.cs" />
+    <Compile Include="Implements\Factors\FactorTotalReportFinancialDto.cs" />
+    <Compile Include="Implements\MarketerSalaryPayments\MarketerSalaryPaymentDto.cs" />
+    <Compile Include="Implements\MarketerSalaryPayments\PeriodSalaryDto.cs" />
+    <Compile Include="Implements\Marketers\MarketerDto.cs" />
+    <Compile Include="Implements\Marketers\MarketerShopFactorChart.cs" />
+    <Compile Include="Implements\Messages\PrivateMessageDto.cs" />
+    <Compile Include="Implements\Messages\PublicMessageDto.cs" />
+    <Compile Include="Implements\OrdersSuggestions\OrderSuggestionItemTypeCountDto.cs" />
+    <Compile Include="Implements\Orders\AreaOrderWithShopDto.cs" />
+    <Compile Include="Implements\Orders\CheckOrder.cs" />
+    <Compile Include="Implements\Orders\OrderBaseDto.cs" />
+    <Compile Include="Implements\Orders\OrderBaseWithCustomerDto.cs" />
+    <Compile Include="Implements\Orders\OrderFactorDto.cs" />
+    <Compile Include="Implements\Persons\Charts\ShopDailyChart.cs" />
+    <Compile Include="Implements\Persons\CustomerDto.cs" />
+    <Compile Include="Implements\Persons\CustomerExcelDto.cs" />
+    <Compile Include="Implements\Persons\CustomerSubsets\ShopCustomerSubsetReportDto.cs" />
+    <Compile Include="Implements\Persons\CustomerSubsets\ShopsCustomerSubsetReportDto.cs" />
+    <Compile Include="Implements\Persons\ShopDto.cs" />
+    <Compile Include="Implements\Persons\ShopFactorSaleDto.cs" />
+    <Compile Include="Implements\Persons\ShopPositionWithDistanceDto.cs" />
+    <Compile Include="Implements\PositionDto.cs" />
+    <Compile Include="Implements\ProductsSuggestions\CustomerProductSuggestionDto.cs" />
+    <Compile Include="Implements\ProductsSuggestions\ProductSuggestionDto.cs" />
+    <Compile Include="Implements\ProductsSuggestions\ProductSuggestionGroupDto.cs" />
+    <Compile Include="Implements\ProductsSuggestions\ShopProductSuggestionDto.cs" />
+    <Compile Include="Implements\Products\ProductDiscount\PrdouctPercentDiscountDto.cs" />
+    <Compile Include="Implements\Products\ProductDiscount\ProductDiscountBaseDto.cs" />
+    <Compile Include="Implements\Products\ProductDto.cs" />
+    <Compile Include="Implements\Promoters\PromoterDto.cs" />
+    <Compile Include="Implements\ShopAcceptors\ShopAcceptorAddressDto.cs" />
+    <Compile Include="Implements\ShopAcceptors\ShopAcceptorsDto.cs" />
+    <Compile Include="Implements\ShopAcceptors\ShopAcceptorsWithAddressDto.cs" />
+    <Compile Include="Implements\ShopCustomerSubsetSettlements\ShopCustomerSubsetSettlementDto.cs" />
+    <Compile Include="Implements\Slider\SliderDiscount.cs" />
+    <Compile Include="Implements\UserInfoDto.cs" />
+    <Compile Include="QueryModels\ApplicationSettings\IApplicationSettingDto.cs" />
+    <Compile Include="QueryModels\BaseEntities\ICityDto.cs" />
+    <Compile Include="QueryModels\BaseEntities\ICityWithoutZoneDto.cs" />
+    <Compile Include="QueryModels\BaseEntities\IProvinceDto.cs" />
+    <Compile Include="QueryModels\BaseEntities\IProvinecWithoutCity.cs" />
+    <Compile Include="QueryModels\BaseEntities\IZoneDto.cs" />
+    <Compile Include="QueryModels\Brands\IBrandDto.cs" />
+    <Compile Include="QueryModels\Categories\Abstract\ICategoryBaseDto.cs" />
+    <Compile Include="QueryModels\Categories\Abstract\ICategoryBaseWithImageDto.cs" />
+    <Compile Include="QueryModels\Categories\Abstract\ICategoryBaseWithSubCategoriesDto.cs" />
+    <Compile Include="QueryModels\Categories\ICategoryImageDto.cs" />
+    <Compile Include="QueryModels\Categories\ICategoryWithProductDto.cs" />
+    <Compile Include="QueryModels\Comments\ICommentDto.cs" />
+    <Compile Include="QueryModels\Complaints\IComplaintDto.cs" />
+    <Compile Include="QueryModels\Dashboards\IDashboardCountDto.cs" />
+    <Compile Include="QueryModels\Discounts\Abstract\IDiscountBaseDto.cs" />
+    <Compile Include="QueryModels\Discounts\IPercentDiscountDto.cs" />
+    <Compile Include="QueryModels\Discounts\IPercentDiscountWithProductDto.cs" />
+    <Compile Include="QueryModels\Discounts\IProductDiscountDto.cs" />
+    <Compile Include="QueryModels\Factors\FactorStates\IFactorStateBaseDto.cs" />
+    <Compile Include="QueryModels\Factors\FactorStates\IFailedFactorStateDto.cs" />
+    <Compile Include="QueryModels\Factors\FactorStates\IPaidFactorStateDto.cs" />
+    <Compile Include="QueryModels\Factors\FactorStates\IPendingFactorStateDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorReportFinancialDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorTotalReportFinancialDto.cs" />
+    <Compile Include="QueryModels\Factors\ShipmentStates\ISendShipmentStateDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorAddressDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorFullInfoDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorRawDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorWithCustomerDto.cs" />
+    <Compile Include="QueryModels\Factors\IFactorWithShopDto.cs" />
+    <Compile Include="QueryModels\Factors\ShipmentStates\IDeliveryShipmentStateDto.cs" />
+    <Compile Include="QueryModels\Factors\ShipmentStates\IPendingShipmentStateDto.cs" />
+    <Compile Include="QueryModels\Factors\ShipmentStates\IReverseShipmentStateDto.cs" />
+    <Compile Include="QueryModels\Factors\ShipmentStates\IShipmentStateBaseDto.cs" />
+    <Compile Include="QueryModels\FakeIos\Orders\IFakeOrderIosDto.cs" />
+    <Compile Include="QueryModels\FakeIos\Orders\IFakeOrderIosItemDto.cs" />
+    <Compile Include="QueryModels\IPositionDto.cs" />
+    <Compile Include="QueryModels\IUserInfoDto.cs" />
+    <Compile Include="QueryModels\MarketerSalaryPayments\IMarketerSalaryPaymentDto.cs" />
+    <Compile Include="QueryModels\MarketerSalaryPayments\IPeriodSalaryDto.cs" />
+    <Compile Include="QueryModels\Marketers\Charts\IMarketerShopFactorChart.cs" />
+    <Compile Include="QueryModels\Marketers\IMarketerAddressDto.cs" />
+    <Compile Include="QueryModels\Marketers\IMarketerCommentDto.cs" />
+    <Compile Include="QueryModels\Marketers\IMarketerDto.cs" />
+    <Compile Include="QueryModels\Marketers\IMarketerFullInfoDto.cs" />
+    <Compile Include="QueryModels\Marketers\IMarketerReagentDto.cs" />
+    <Compile Include="QueryModels\Marketers\IMarketerSalaryDto.cs" />
+    <Compile Include="QueryModels\Messages\IMessageDto.cs" />
+    <Compile Include="QueryModels\Messages\IPrivateMessageDto.cs" />
+    <Compile Include="QueryModels\Messages\IPublicMessageDto.cs" />
+    <Compile Include="QueryModels\Notifications\INotificationBaseDto.cs" />
+    <Compile Include="QueryModels\Notifications\IPanelNotificationDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\Abstract\IOrderSuggestionItemBaseDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\IAlternativeProductSuggestionDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\IAlternativeProductSuggestionItemDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\IHasProductSuggestionItemDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\INoProductSuggestionItemDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\IOrderSuggestionDto.cs" />
+    <Compile Include="QueryModels\OrdersSuggestions\IOrderSuggestionItemTypeCountDto.cs" />
+    <Compile Include="QueryModels\Orders\Abstract\IOrderBaseDto.cs" />
+    <Compile Include="QueryModels\Orders\Abstract\IOrderBaseFullInfoDto.cs" />
+    <Compile Include="QueryModels\Orders\Discounts\IOrderItemDiscountBaseDto.cs" />
+    <Compile Include="QueryModels\Orders\Discounts\IOrderItemPercentDiscountDto.cs" />
+    <Compile Include="QueryModels\Orders\IAreaOrderDto.cs" />
+    <Compile Include="QueryModels\Orders\IOrderAddressDto.cs" />
+    <Compile Include="QueryModels\Orders\IOrderFactorDto.cs" />
+    <Compile Include="QueryModels\Orders\IPrivateOrderDto.cs" />
+    <Compile Include="QueryModels\Orders\Items\IOrderItemDto.cs" />
+    <Compile Include="QueryModels\Orders\IOrderProductDto.cs" />
+    <Compile Include="QueryModels\Persons\Abstract\IPersonDto.cs" />
+    <Compile Include="QueryModels\Persons\AppInfo\IAppInfoDto.cs" />
+    <Compile Include="QueryModels\Persons\Customer\ICustomerAddressDto.cs" />
+    <Compile Include="QueryModels\Persons\Customer\ICustomerWithAddressesDto.cs" />
+    <Compile Include="QueryModels\Persons\Customer\IDefultCustomerAddressDto.cs" />
+    <Compile Include="QueryModels\Persons\Customer\ICustomerDto.cs" />
+    <Compile Include="QueryModels\Persons\Customer\ICustomerExcelDto.cs" />
+    <Compile Include="QueryModels\Persons\Customer\ICustomerWithDefaultAddressDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\Charts\IShopFactorChart.cs" />
+    <Compile Include="QueryModels\Persons\Shop\CustomerSubsets\IShopCustomerSubsetReportDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\CustomerSubsets\IShopsCustomerSubsetReportDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IBankAccountDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IImageDocumentsDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopAddressDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopFactorSaleDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopFullInfo.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopPositionDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopPositionWithDistanceDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopStatusLogDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopWithAddressDto.cs" />
+    <Compile Include="QueryModels\Persons\Shop\IShopWithLogDto.cs" />
+    <Compile Include="QueryModels\ProductsSuggestions\Abstract\IProductSuggestionDto.cs" />
+    <Compile Include="QueryModels\ProductsSuggestions\CustomerProductsSuggestion\ICustomerProductSuggestionDto.cs" />
+    <Compile Include="QueryModels\ProductsSuggestions\IProductSuggestionGroupDto.cs" />
+    <Compile Include="QueryModels\ProductsSuggestions\ShopProductsSuggestion\IShopProductSuggestionDto.cs" />
+    <Compile Include="QueryModels\Products\IFakeProductDiscountDto.cs" />
+    <Compile Include="QueryModels\Products\IProductDto.cs" />
+    <Compile Include="QueryModels\Products\IProductImageDto.cs" />
+    <Compile Include="QueryModels\Products\IProductWithDiscountDto.cs" />
+    <Compile Include="QueryModels\Products\IProductWithImageDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryModels\Products\ProductDiscount\IProductPercentDiscountDto.cs" />
+    <Compile Include="QueryModels\Products\ProductDiscount\IProductDiscountBaseDto.cs" />
+    <Compile Include="QueryModels\Promoters\IPromoterDto.cs" />
+    <Compile Include="QueryModels\ShopAcceptors\IShopAcceptorAddressDto.cs" />
+    <Compile Include="QueryModels\ShopAcceptors\IShopAcceptorsDto.cs" />
+    <Compile Include="QueryModels\ShopAcceptors\IShopAcceptorsWithAddressDto.cs" />
+    <Compile Include="QueryModels\ShopMarketersHistories\IShopMarketersHistoryDto.cs" />
+    <Compile Include="QueryModels\Sliders\ISliderDiscountDto.cs" />
+    <Compile Include="QueryModels\Sliders\ISliderDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QueryModels\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shopping.Infrastructure\Shopping.Infrastructure.csproj">
+      <Project>{2EF382E0-D87B-4BAE-8567-72BE607BBD8A}</Project>
+      <Name>Shopping.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

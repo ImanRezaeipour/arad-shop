@@ -1,0 +1,54 @@
+2019-05-20 14:18:32.4990|ERROR|Shopping.Infrastructure.Asp.Filters.MobileExceptionFilterAttribute|AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PrivateOrder -> IPrivateOrderDto
+Shopping.DomainModel.Aggregates.Orders.Aggregates.PrivateOrder -> Shopping.QueryModel.QueryModels.Orders.IPrivateOrderDto
+
+Type Map configuration:
+PrivateOrder -> IPrivateOrderDto
+Shopping.DomainModel.Aggregates.Orders.Aggregates.PrivateOrder -> Shopping.QueryModel.QueryModels.Orders.IPrivateOrderDto
+
+Property:
+TimeLeft ---> System.InvalidOperationException: Nullable object must have a value.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Nullable`1.get_Value()
+   at Shopping.QueryService.Implements.Orders.OrderProfile.CalcTimeLeft(OrderBase order) in C:\Shopper\Shopping\Shopping.QueryService.Implements\Orders\OrderProfile.cs:line 78
+   at lambda_method(Closure , PrivateOrder_D68F41F628B7C3251C452F27C4FC575EEFD1511C4ADA26AE10F2E596DB825E29 , IOrderBaseFullInfoDto , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , PrivateOrder_D68F41F628B7C3251C452F27C4FC575EEFD1511C4ADA26AE10F2E596DB825E29 , IOrderBaseFullInfoDto , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at AutoMapper.Mapper.Map[TDestination](Object source)
+   at Shopping.QueryService.Implements.Orders.OrderMapper.ToOrderBaseFullInfoDto(OrderBase src) in C:\Shopper\Shopping\Shopping.QueryService.Implements\Orders\OrderMapper.cs:line 15
+   at Shopping.QueryService.Implements.Orders.OrderQueryService.<>c.<GetCustomerOrdersByUserId>b__11_9(<>f__AnonymousType7`2 p) in C:\Shopper\Shopping\Shopping.QueryService.Implements\Orders\OrderQueryService.cs:line 192
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Shopping.QueryService.Implements.Orders.OrderQueryService.GetCustomerOrdersByUserId(Guid userId, PagedInputDto pagedInput) in C:\Shopper\Shopping\Shopping.QueryService.Implements\Orders\OrderQueryService.cs:line 188
+   at Shopping.Mobile.ApiService.Controllers.Controllers.Orders.CustomerOrderController.Get(PagedInputDto pagedInput) in C:\Shopper\Shopping\Shopping.Mobile.ApiService.Controllers\Controllers\Orders\CustomerOrderController.cs:line 24
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__3(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()

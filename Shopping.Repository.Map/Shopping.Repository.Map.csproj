@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99AB9DC5-B18C-4957-BB9B-44626803E9AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shopping.Repository.Map</RootNamespace>
+    <AssemblyName>Shopping.Repository.Map</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\ApplicationSettings\ApplicationSettingMap.cs" />
+    <Compile Include="Aggregates\BaseEntities\CityMap.cs" />
+    <Compile Include="Aggregates\BaseEntities\ProvinceMap.cs" />
+    <Compile Include="Aggregates\Brands\BrandMap.cs" />
+    <Compile Include="Aggregates\Categories\CategoryBaseMap.cs" />
+    <Compile Include="Aggregates\Categories\CategoryMap.cs" />
+    <Compile Include="Aggregates\Categories\CategoryRootMap.cs" />
+    <Compile Include="Aggregates\Comments\CommentMap.cs" />
+    <Compile Include="Aggregates\Complaints\ComplaintMap.cs" />
+    <Compile Include="Aggregates\CustomerDiscountPurchases\CustomerDiscountPurchasMap.cs" />
+    <Compile Include="Aggregates\Discounts\DiscountBaseMap.cs" />
+    <Compile Include="Aggregates\Discounts\PercentDiscountMap.cs" />
+    <Compile Include="Aggregates\Factors\FactorMap.cs" />
+    <Compile Include="Aggregates\Factors\FactorRawbaseMap.cs" />
+    <Compile Include="Aggregates\Factors\ShipmentStateBaseMap.cs" />
+    <Compile Include="Aggregates\FakeIos\FakeCustomerIosMap.cs" />
+    <Compile Include="Aggregates\FakeIos\FakeOrderIosItemMap.cs" />
+    <Compile Include="Aggregates\FakeIos\FakeOrderIosMap.cs" />
+    <Compile Include="Aggregates\Notifications\NotificationBaseMap.cs" />
+    <Compile Include="Aggregates\Notifications\PanelNotificationMap.cs" />
+    <Compile Include="Aggregates\Orders\Discounts\OrderItemDiscountBaseMap.cs" />
+    <Compile Include="Aggregates\Orders\Discounts\OrderItemPercentDiscountMap.cs" />
+    <Compile Include="Aggregates\Orders\Items\OrderItemMap.cs" />
+    <Compile Include="Aggregates\Products\PrdouctPercentDiscountMap.cs" />
+    <Compile Include="Aggregates\Products\ProductDiscountBaseMap.cs" />
+    <Compile Include="Aggregates\Promoters\PromoterCustomerSubsetMap.cs" />
+    <Compile Include="Aggregates\Promoters\PromoterMap.cs" />
+    <Compile Include="Aggregates\ShopCustomerSubsetSettlements\ShopCustomerSubsetSettlementMap.cs" />
+    <Compile Include="Aggregates\ShopMarketerHistories\ShopMarketerHistoryMap.cs" />
+    <Compile Include="Aggregates\MarketerSalaryPayments\MarketerSalaryPaymentMap.cs" />
+    <Compile Include="Aggregates\Marketers\MarketerMap.cs" />
+    <Compile Include="Aggregates\Messages\PrivateMessageMap.cs" />
+    <Compile Include="Aggregates\Messages\PublicMessageMap.cs" />
+    <Compile Include="Aggregates\OrdersSuggestions\AlternativeProductSuggestionItemMap.cs" />
+    <Compile Include="Aggregates\OrdersSuggestions\HasProductSuggestionItemMap.cs" />
+    <Compile Include="Aggregates\OrdersSuggestions\NoProductSuggestionItemMap.cs" />
+    <Compile Include="Aggregates\OrdersSuggestions\OrderSuggestionItemBaseMap.cs" />
+    <Compile Include="Aggregates\OrdersSuggestions\OrderSuggestionMap.cs" />
+    <Compile Include="Aggregates\Orders\AreaOrderMap\AreaOrderMap.cs" />
+    <Compile Include="Aggregates\Orders\OrderBaseMap.cs" />
+    <Compile Include="Aggregates\Orders\PrivateOrderMap\PrivateOrderMap.cs" />
+    <Compile Include="Aggregates\Payments\PaymentMap.cs" />
+    <Compile Include="Aggregates\Persons\CustomerMaps\CustomerMap.cs" />
+    <Compile Include="Aggregates\Persons\PersonMap.cs" />
+    <Compile Include="Aggregates\Persons\Shops\ShopMap.cs" />
+    <Compile Include="Aggregates\ProductsSuggestions\CustomerProductsSuggestion\CustomerProductSuggestionMap.cs" />
+    <Compile Include="Aggregates\ProductsSuggestions\ProductSuggestionMap.cs" />
+    <Compile Include="Aggregates\ProductsSuggestions\ShopProductsSuggestion\ShopProductSuggestionMap.cs" />
+    <Compile Include="Aggregates\Products\ProductMap.cs" />
+    <Compile Include="Aggregates\ShopAcceptors\ShopAcceptorMap.cs" />
+    <Compile Include="Aggregates\ShopOrderLogs\ShopOrderLogMap.cs" />
+    <Compile Include="Aggregates\Sliders\SliderMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Shopping.DomainModel\Shopping.DomainModel.csproj">
+      <Project>{9C9951CD-09A4-491A-9AC3-80B9BF3ED58E}</Project>
+      <Name>Shopping.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Infrastructure.Core\Shopping.Infrastructure.Core.csproj">
+      <Project>{3BA2EEAA-F8BD-47FD-B7EA-FA2119D26BCD}</Project>
+      <Name>Shopping.Infrastructure.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

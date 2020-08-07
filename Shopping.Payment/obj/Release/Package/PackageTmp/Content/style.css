@@ -1,0 +1,30 @@
+﻿body {
+    font-family: IRANSans !important;
+    margin: 0;
+    padding: 0
+}
+
+* {
+    font-family: IRANSans !important;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 5px solid #d30313
+}
+
+.bg-orange {
+    background-color: #FF6E00;
+}
+
+
+
+.bg-banner {
+    width: 100%;
+    background-color: #d30313;
+}
+
+.banner-img {
+    margin: 0 auto !important;
+}

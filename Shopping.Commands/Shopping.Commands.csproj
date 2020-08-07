@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE1A642B-BF79-4495-B114-EF58D6A8B0D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shopping.Commands</RootNamespace>
+    <AssemblyName>Shopping.Commands</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.8.0.100\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.ValidatorAttribute, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.ValidatorAttribute.8.0.100\lib\net45\FluentValidation.ValidatorAttribute.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ApplicationSettings\Commands\UpdateApplicationSettingCommand.cs" />
+    <Compile Include="Commands\ApplicationSettings\Responses\UpdateApplicationSettingCommandResponse.cs" />
+    <Compile Include="Commands\ApplicationSettings\Validators\UpdateApplicationSettingCommandValidator.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\ActiveCityCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\ActiveZoneCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\CreateCityCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\CreateProvinceCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\CreateZoneCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\DeActiveCityCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\DeActiveZoneCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\UpdateCityCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\UpdateProvinceCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Commands\UpdateZoneCommand.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\ActiveCityCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\ActiveZoneCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\CreateCityCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\CreateProvinceCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\CreateZoneCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\DeActiveCityCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\DeActiveZoneCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\UpdateCityCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\UpdateProvinceCommandResponse.cs" />
+    <Compile Include="Commands\BaseEntities\Responses\UpdateZoneCommandResponse.cs" />
+    <Compile Include="Commands\Brands\Commands\ActiveBrandCommand.cs" />
+    <Compile Include="Commands\Brands\Commands\CreateBrandCommand.cs" />
+    <Compile Include="Commands\Brands\Commands\DeActiveBrandCommand.cs" />
+    <Compile Include="Commands\Brands\Commands\DeleteBrandCommand.cs" />
+    <Compile Include="Commands\Brands\Commands\UpdateBrandCommand.cs" />
+    <Compile Include="Commands\Brands\Responses\DeActiveBrandCommandResponse.cs" />
+    <Compile Include="Commands\Brands\Responses\ActiveBrandCommandResponse.cs" />
+    <Compile Include="Commands\Brands\Responses\CreateBrandCommandResponse.cs" />
+    <Compile Include="Commands\Brands\Responses\DeleteBrandCommandResponse.cs" />
+    <Compile Include="Commands\Brands\Responses\UpdateBrandCommandResponse.cs" />
+    <Compile Include="Commands\Brands\Validators\UpdateBrandCommandValidator.cs" />
+    <Compile Include="Commands\Brands\Validators\CreateBrandCommandValidator.cs" />
+    <Compile Include="Commands\Categories\Commands\Abstact\CategoryBaseCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\CategoryOrderCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\SortCategoryRootCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\SortSubCategoryCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\DeActiveCategoryCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\ActiveCategoryCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\DeleteCategoryCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\DeleteCategoryRootCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\Items\CategoryImageCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\CreateCategoryCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\CreateCategoryRootCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\UpdateCategoryCommand.cs" />
+    <Compile Include="Commands\Categories\Commands\UpdateCategoryRootCommand.cs" />
+    <Compile Include="Commands\Categories\Responses\SortCategoryRootCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\SortCategoryCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\DeActiveCategoryCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\ActiveCategoryCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\CreateCategoryCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\CreateCategoryRootCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\DeleteCategoryCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\DeleteCategoryRootCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\UpdateCategoryCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Responses\UpdateCategoryRootCommandResponse.cs" />
+    <Compile Include="Commands\Categories\Validators\CreateCategoryCommandValidator.cs" />
+    <Compile Include="Commands\Categories\Validators\CreateCategoryRootCommandValidator.cs" />
+    <Compile Include="Commands\Categories\Validators\UpdateCategoryCommandValidator.cs" />
+    <Compile Include="Commands\Categories\Validators\UpdateCategoryRootCommandValidator.cs" />
+    <Compile Include="Commands\Comments\Commands\CreateCommentCommand.cs" />
+    <Compile Include="Commands\Comments\Responses\CreateCommentCommandResponse.cs" />
+    <Compile Include="Commands\Comments\Validators\CreateCommentCommandValidator.cs" />
+    <Compile Include="Commands\Discounts\Commands\Abstract\DiscountBaseCommand.cs" />
+    <Compile Include="Commands\Discounts\Commands\AddProductToPercentDiscountCommand.cs" />
+    <Compile Include="Commands\Discounts\Commands\CreateDiscountPercentCommand.cs" />
+    <Compile Include="Commands\Discounts\Commands\DeleteProductFromPercentDiscountCommand.cs" />
+    <Compile Include="Commands\Discounts\Commands\UpdateDiscountPercentCommand.cs" />
+    <Compile Include="Commands\Discounts\Responses\AddProductToPercentDiscountCommandResponse.cs" />
+    <Compile Include="Commands\Discounts\Responses\CreateDiscoutPercentCommandResponse.cs" />
+    <Compile Include="Commands\Discounts\Responses\DeleteProductFromPercentDiscountCommandResponse.cs" />
+    <Compile Include="Commands\Discounts\Responses\UpdateDiscountPercentCommandResponse.cs" />
+    <Compile Include="Commands\Factors\Commands\ShipmentDeliveryFactorCommand.cs" />
+    <Compile Include="Commands\Factors\Commands\ShipmentSendFactorCommand.cs" />
+    <Compile Include="Commands\Factors\Responses\ShipmentDeliveryFactorCommandResponse.cs" />
+    <Compile Include="Commands\Factors\Responses\ShipmentSendFactorCommandResponse.cs" />
+    <Compile Include="Commands\Factors\Validators\ShipmentDeliveryFactorCommandValidator.cs" />
+    <Compile Include="Commands\Factors\Validators\ShipmentSendFactorCommandValidator.cs" />
+    <Compile Include="Commands\FakeIos\Customers\Commands\LoginFakeCustomerIosCommand.cs" />
+    <Compile Include="Commands\FakeIos\Customers\Responses\LoginFakeCustomerIosCommandResponse.cs" />
+    <Compile Include="Commands\FakeIos\Customers\Commands\RegisterFakeCustomerIosCommand.cs" />
+    <Compile Include="Commands\FakeIos\Customers\Responses\RegisterFakeCustomerIosCommandResponse.cs" />
+    <Compile Include="Commands\FakeIos\Orders\Commands\ChangeFakeOrderIosCommand.cs" />
+    <Compile Include="Commands\FakeIos\Orders\Commands\CreateFakeOrderIosCommand.cs" />
+    <Compile Include="Commands\FakeIos\Orders\Commands\FakeOrderIosItemCommandItem.cs" />
+    <Compile Include="Commands\FakeIos\Orders\Responses\FakeOrderIosCommandResponse.cs" />
+    <Compile Include="Commands\MarketerSalaryPayments\Commands\CommandItems\PeriodSalaryCommand.cs" />
+    <Compile Include="Commands\MarketerSalaryPayments\Commands\CreateMarketerSalaryPaymentCommand.cs" />
+    <Compile Include="Commands\MarketerSalaryPayments\Commands\UpdateMarketerSalaryPaymentCommand.cs" />
+    <Compile Include="Commands\MarketerSalaryPayments\Responses\CreateMarketerSalaryPaymentCommandResponse.cs" />
+    <Compile Include="Commands\MarketerSalaryPayments\Responses\UpdateMarketerSalaryPaymentCommandResponse.cs" />
+    <Compile Include="Commands\Marketers\Commands\ActiveMarketerCommand.cs" />
+    <Compile Include="Commands\Marketers\Commands\AddMarketerCommentCommand.cs" />
+    <Compile Include="Commands\Marketers\Commands\ChangeShopMarketerCommand.cs" />
+    <Compile Include="Commands\Marketers\Commands\CreateMarketerCommand.cs" />
+    <Compile Include="Commands\Marketers\Commands\CommandItems\MarketerAddressCommandItem.cs" />
+    <Compile Include="Commands\Marketers\Commands\CommandItems\MarketerReagentCommandItem.cs" />
+    <Compile Include="Commands\Marketers\Commands\CommandItems\MarketerSalaryCommandItem.cs" />
+    <Compile Include="Commands\Marketers\Commands\DeActiveMarketerCommand.cs" />
+    <Compile Include="Commands\Marketers\Commands\DetachedMarketerShopCommand.cs" />
+    <Compile Include="Commands\Marketers\Commands\UpdateMarketerCommand.cs" />
+    <Compile Include="Commands\Marketers\Responses\MarketerCommandResponse.cs" />
+    <Compile Include="Commands\Marketers\Responses\UpdateMarketerCommandResponse.cs" />
+    <Compile Include="Commands\Marketers\Validators\AddMarketerCommentCommandValidator.cs" />
+    <Compile Include="Commands\Marketers\Validators\CreateMarketerCommandValidator.cs" />
+    <Compile Include="Commands\Marketers\Validators\UpdateMarketerCommandValidator.cs" />
+    <Compile Include="Commands\Messages\Commands\CreatePrivateMessageCommand.cs" />
+    <Compile Include="Commands\Messages\Commands\CreatePublicMessageCommand.cs" />
+    <Compile Include="Commands\Messages\Responses\CreatePrivateMessageCommandResponse.cs" />
+    <Compile Include="Commands\Messages\Responses\CreatePublicMessageCommandResponse.cs" />
+    <Compile Include="Commands\Messages\Validators\CreatePrivateMessageCommandValidator.cs" />
+    <Compile Include="Commands\Messages\Validators\CreatePublicMessageCommandValidator.cs" />
+    <Compile Include="Commands\Notifications\Commands\VisitedPanelNotificationCommand.cs" />
+    <Compile Include="Commands\Notifications\Responses\NotificationCommandResponse.cs" />
+    <Compile Include="Commands\Notifications\Validators\VisitedPanelNotificationCommandValidator.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Commands\AcceptOrderSuggestionCommand.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Commands\AcceptOrderSuggestionItemCommand.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Commands\CreateOrderSuggestionCommand.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Commands\OrderSuggestionItemCommand.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Commands\RejectOrderSuggestionCommand.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Responses\AcceptOrderSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Responses\CreateOrderSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Responses\RejectOrderSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Validators\AcceptOrderSuggestionCommandValidator.cs" />
+    <Compile Include="Commands\OrdersSuggestions\Validators\CreateOrderSuggestionCommandValidator.cs" />
+    <Compile Include="Commands\Orders\Commands\Abstract\OrderBaseCommand.cs" />
+    <Compile Include="Commands\Orders\Commands\PrivateOrders\CancelPrivateOrderConmmand.cs" />
+    <Compile Include="Commands\Orders\Commands\PrivateOrders\ConvertPrivateToAreaOrderCommand.cs" />
+    <Compile Include="Commands\Orders\Commands\OrderItemCommand.cs" />
+    <Compile Include="Commands\Orders\Commands\PrivateOrders\CreatePrivateOrderCommand.cs" />
+    <Compile Include="Commands\Orders\Commands\PrivateOrders\OpenPrivateOrderCommand.cs" />
+    <Compile Include="Commands\Orders\Responses\CancelPrivateOrderConmmandResponse.cs" />
+    <Compile Include="Commands\Orders\Responses\ConvertPrivateToAreaOrderCommandResponse.cs" />
+    <Compile Include="Commands\Orders\Responses\CreatePrivateOrderCommandResponse.cs" />
+    <Compile Include="Commands\Orders\Responses\OpenAreaOrderCommandResponse.cs" />
+    <Compile Include="Commands\Orders\Responses\OpenPrivateOrderCommandResponse.cs" />
+    <Compile Include="Commands\Orders\Validators\CreatePrivateOrderCommandValidator.cs" />
+    <Compile Include="Commands\Payments\Commands\PaymentFactorCommand.cs" />
+    <Compile Include="Commands\Payments\Responses\PaymentFactorCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Commands\Abstract\PersonCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\ActiveCustomerCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\AddCustomerAddressCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\CreateCustomerCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\Items\CustomerAddressItem.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\DefultCustomerAddressCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\DeActiveCustomerCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\DeleteCustomerAddressCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Customer\UpdateCustomerCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\SetAppInfoCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\AcceptShopCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\ActiveShopCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\BankAccountCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\CreateShopCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\DeActiveShopCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\Item\ShopAddressCommandItem.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\NeedToModifyShopCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\RejectShopCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\ImageDocumentsCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\ShopAddressCommand.cs" />
+    <Compile Include="Commands\Persons\Commands\Shop\UpdateShopCommand.cs" />
+    <Compile Include="Commands\Persons\Responses\ActiveCustomerCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\AcceptShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\ActiveShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\AddCustomerAddressCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\CreateCustomerCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\CreateShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\DeActiveCustomerCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\DeActiveShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\NeedToModifyShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\RejectShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\DeleteCustomerAddressCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\AppInfoCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\UpdateCustomerCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Responses\UpdateShopCommandResponse.cs" />
+    <Compile Include="Commands\Persons\Validators\ActiveCustomerCommandValidator.cs" />
+    <Compile Include="Commands\Persons\Validators\CreateShopCommandValidator.cs" />
+    <Compile Include="Commands\Persons\Validators\DeActiveCustomerCommandValidator.cs" />
+    <Compile Include="Commands\Persons\Validators\UpdateCustomerCommandValidator.cs" />
+    <Compile Include="Commands\Persons\Validators\UpdateShopCommandValidator.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Commands\Abstract\ProductSuggestionCommandBase.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Commands\CustomerProductSuggestion\CreateCustomerProductSuggestionCommand.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Commands\AcceptProductSuggestionCommand.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Commands\RejectProductSuggestionCommand.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Commands\ShopProductSuggestion\CreateShopProductSuggestionCommand.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Responses\AcceptProductSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Responses\CreateCustomerProductSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Responses\CreateShopProductSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Responses\RejectProductSuggestionCommandResponse.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Validators\CreateCustomerProductSuggestionCommandValidator.cs" />
+    <Compile Include="Commands\ProductsSuggestions\Validators\CreateShopProductSuggestionCommandValidator.cs" />
+    <Compile Include="Commands\Products\Commands\ActiveProductCommand.cs" />
+    <Compile Include="Commands\Products\Commands\CreateProductCommand.cs" />
+    <Compile Include="Commands\Products\Commands\DeActiveProductCommand.cs" />
+    <Compile Include="Commands\Products\Commands\DeleteProductCommand.cs" />
+    <Compile Include="Commands\Products\Commands\Items\ProductDiscountCommandItem.cs" />
+    <Compile Include="Commands\Products\Commands\ProductImageCommand.cs" />
+    <Compile Include="Commands\Products\Commands\UpdateProductCommand.cs" />
+    <Compile Include="Commands\Products\Responses\ActiveProductCommandResponse.cs" />
+    <Compile Include="Commands\Products\Responses\CreateProductCommandResponse.cs" />
+    <Compile Include="Commands\Products\Responses\DeActiveProductCommandResponse.cs" />
+    <Compile Include="Commands\Products\Responses\DeleteProductCommandResponse.cs" />
+    <Compile Include="Commands\Products\Responses\UpdateProductCommandResponse.cs" />
+    <Compile Include="Commands\Products\Validators\ActiveProductCommandValidator.cs" />
+    <Compile Include="Commands\Products\Validators\CreateProductCommandValidator.cs" />
+    <Compile Include="Commands\Products\Validators\DeActiveProductCommandValidator.cs" />
+    <Compile Include="Commands\Products\Validators\UpdateProductCommandValidator.cs" />
+    <Compile Include="Commands\Complaints\Commands\CreateRegisterComplaintCommand.cs" />
+    <Compile Include="Commands\Complaints\Responses\CreateRegisterComplaintCommandResponse.cs" />
+    <Compile Include="Commands\Complaints\Validators\CreateRegisterComplaintCommandValidator.cs" />
+    <Compile Include="Commands\Promoters\Commands\CreatePromoterCommand.cs" />
+    <Compile Include="Commands\Promoters\Commands\UpdatePromoterCommand.cs" />
+    <Compile Include="Commands\Promoters\Responses\PromoterCommandResponse.cs" />
+    <Compile Include="Commands\Shared\UserInfoCommandItem.cs" />
+    <Compile Include="Commands\ShopAcceptors\Commands\AcceptShopAcceptorCommand.cs" />
+    <Compile Include="Commands\ShopAcceptors\Commands\CoomandItems\ShopAcceptorAddressCommand.cs" />
+    <Compile Include="Commands\ShopAcceptors\Commands\CreateShopAcceptorCommand.cs" />
+    <Compile Include="Commands\ShopAcceptors\Commands\RejectShopAcceptorCommand.cs" />
+    <Compile Include="Commands\ShopAcceptors\Responses\AcceptShopAcceptorCommandResponse.cs" />
+    <Compile Include="Commands\ShopAcceptors\Responses\CreateShopAcceptorCommandResponse.cs" />
+    <Compile Include="Commands\ShopAcceptors\Responses\RejectShopAcceptorCommandResponse.cs" />
+    <Compile Include="Commands\Sliders\Commands\ActiveSliderCommand.cs" />
+    <Compile Include="Commands\Sliders\Commands\AddSliderToDiscountCommand.cs" />
+    <Compile Include="Commands\Sliders\Commands\ChangeTypeSliderToDiscountCommand.cs" />
+    <Compile Include="Commands\Sliders\Commands\CreateSliderCommand.cs" />
+    <Compile Include="Commands\Sliders\Commands\DeActiveSliderCommand.cs" />
+    <Compile Include="Commands\Sliders\Commands\DeleteSlideCommand.cs" />
+    <Compile Include="Commands\Sliders\Commands\SortOrderSliderCommand.cs" />
+    <Compile Include="Commands\Sliders\Responses\ActivationSliderCommandResponse.cs" />
+    <Compile Include="Commands\Sliders\Responses\AddSliderToDiscountCommandResponse.cs" />
+    <Compile Include="Commands\Sliders\Responses\ChangeTypeSliderToDiscountCommandResponse.cs" />
+    <Compile Include="Commands\Sliders\Responses\CreateSliderCommandResponse.cs" />
+    <Compile Include="Commands\Sliders\Responses\DeleteSlideCommandResponse.cs" />
+    <Compile Include="Commands\Sliders\Responses\SortOrderSliderCommandResponse.cs" />
+    <Compile Include="Commands\TestCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shopping.DomainModel\Shopping.DomainModel.csproj">
+      <Project>{9C9951CD-09A4-491A-9AC3-80B9BF3ED58E}</Project>
+      <Name>Shopping.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Infrastructure.Core\Shopping.Infrastructure.Core.csproj">
+      <Project>{3ba2eeaa-f8bd-47fd-b7ea-fa2119d26bcd}</Project>
+      <Name>Shopping.Infrastructure.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Infrastructure\Shopping.Infrastructure.csproj">
+      <Project>{2EF382E0-D87B-4BAE-8567-72BE607BBD8A}</Project>
+      <Name>Shopping.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shopping.Shared\Shopping.Shared.csproj">
+      <Project>{0961143B-290C-4CE3-B060-EBEDA4F659B9}</Project>
+      <Name>Shopping.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\BaseEntities\Validators\" />
+    <Folder Include="Commands\Discounts\Validators\" />
+    <Folder Include="Commands\MarketerSalaryPayments\Validators\" />
+    <Folder Include="Commands\Payments\Validators\" />
+    <Folder Include="Commands\ShopAcceptors\Validators\" />
+    <Folder Include="Commands\Sliders\Validators\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

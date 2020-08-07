@@ -1,0 +1,10 @@
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\bin\Debug\Shopping.BusEvents.dll
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\bin\Debug\Shopping.BusEvents.pdb
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\bin\Debug\NewId.dll
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\bin\Debug\Newtonsoft.Json.dll
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\bin\Debug\Newtonsoft.Json.xml
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\obj\Debug\Shopping.BusEvents.csprojAssemblyReference.cache
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\obj\Debug\Shopping.BusEvents.csproj.CoreCompileInputs.cache
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\obj\Debug\Shopping.BusEvents.csproj.CopyComplete
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\obj\Debug\Shopping.BusEvents.dll
+C:\OnlineProjects\Shopping\Shopping\Shopping.BusEvents\obj\Debug\Shopping.BusEvents.pdb

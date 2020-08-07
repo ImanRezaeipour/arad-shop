@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Parbad Logs</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.css" />
+    <style type="text/css">
+        .pagination > .active > a {
+            background-color: #007c90;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Parbad Logs</h1>
+        </div>
+        <div class="table-responsive">
+            <table id="grid" class="table table-hover">
+                <thead>
+                    <tr style="background-color: #007c90; color: #fff;">
+                        <th data-column-id="OrderNumber" data-type="numeric">Order Number</th>
+                        <th data-column-id="Amount">Amount</th>
+                        <th data-column-id="ReferenceId">Reference ID</th>
+                        <th data-column-id="TransactionId">Transaction ID</th>
+                        <th data-column-id="Status">Status</th>
+                        <th data-column-id="Date" data-formatter="date">Date</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $("#grid").bootgrid({
+            ajax: true,
+            url: "/ParbadLog.axd",
+            rowCount: [10, 20, 50, 100],
+            converters: {
+                datetime: {
+                    from: function (value) { return value; },
+                    to: function (value) { return moment(value).format("YYYY/MM/DD HH:mm:ss"); }
+                }
+            },
+            ajaxSettings: {
+                method: "GET",
+                cache: false
+            },
+            requestHandler: function (request) {
+                return {
+                    pageNumber: request.current,
+                    pageSize: request.rowCount
+                };
+            },
+            responseHandler: function (response) {
+                console.log(response);
+                return {
+                    current: 1,
+                    rowCount: 10,
+                    rows: response.logs
+                };
+            }
+            //formatters: {
+            //    "date": function(column, row) {
+            //        return moment(row.Date).format("YYYY/MM/DD HH:mm:ss");
+            //    }
+            //}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Payment" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\OnlineProjects\\Shopping\\Shopping\\Shopping\.Payment\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\OnlineProjects\\Shopping\\Shopping\\Shopping\.Payment\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ShoppingContext-Web.config Connection String" description="" value="Server=185.208.175.30;Database=ShoppingDB;user id=sa;password=P@ssw0rd123;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\OnlineProjects\\Shopping\\Shopping\\Shopping\.Payment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ShoppingContext']/@connectionString" />
+  </parameter>
+</parameters>

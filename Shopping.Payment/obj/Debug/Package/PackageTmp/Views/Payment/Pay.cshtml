@@ -1,0 +1,44 @@
+﻿<link href="~/Content/style.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<div>
+    <hr />
+</div>
+<br />
+@*<div class="bg-orange">*@
+@*    <div class="container" style="padding-top: 10px;padding-bottom: 10px">*@
+@*        <div class="text-center">*@
+@*            <img src="~/Content/logo-text.png" class="img-responsive" />*@
+@*        </div>*@
+@*    </div>*@
+@*</div>*@
+
+<div class="bg-banner">
+    <img src="~/Content/banner-shop.jpg" class="banner-img" />
+
+</div>
+
+<br />
+<br />
+<br />
+@if (@ViewBag.hasError)
+{
+    <div class="container text-center">
+        <h4 class="text-danger">
+            خطا !
+        </h4>
+        <p class="text-danger">
+            @ViewBag.errorMessage
+        </p>
+        <p class="text-primary">
+            @ViewBag.result
+        </p>
+        <br />
+        <br />
+        <a class="btn btn-warning bg-orange" href="localhost://factorId=@(ViewBag.factorId)">
+            بازگشت
+        </a>
+    </div>
+
+}
+
+@*<a href="localhost://factorId=@(ViewBag.factorId)">بازگشت</a>*@

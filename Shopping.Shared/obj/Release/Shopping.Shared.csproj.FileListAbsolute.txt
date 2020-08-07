@@ -1,0 +1,12 @@
+C:\Shopper\Shopping\Shopping.Shared\bin\Release\Shopping.Shared.dll
+C:\Shopper\Shopping\Shopping.Shared\bin\Release\Shopping.Shared.pdb
+C:\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.csprojAssemblyReference.cache
+C:\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.csproj.CoreCompileInputs.cache
+C:\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.dll
+C:\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.pdb
+D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Shared\bin\Release\Shopping.Shared.dll
+D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Shared\bin\Release\Shopping.Shared.pdb
+D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.csprojResolveAssemblyReference.cache
+D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.csproj.CoreCompileInputs.cache
+D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.dll
+D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Shared\obj\Release\Shopping.Shared.pdb

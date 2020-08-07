@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Shopping.ApiService" GeneratedClassName="ApiSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Origin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">*</Value>
+    </Setting>
+    <Setting Name="RabbitMQ_ServerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.69.216.135</Value>
+    </Setting>
+    <Setting Name="RabbitMQ_UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">p.sahebi</Value>
+    </Setting>
+    <Setting Name="RabbitMQ_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">qwerty123$%</Value>
+    </Setting>
+    <Setting Name="HostApiAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://192.69.216.135:1111</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

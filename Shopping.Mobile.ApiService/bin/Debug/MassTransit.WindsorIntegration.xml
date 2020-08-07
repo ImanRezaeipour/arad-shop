@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MassTransit.WindsorIntegration</name>
+    </assembly>
+    <members>
+        <member name="M:MassTransit.WindsorIntegration.IWindsorContainerConfigurator.AddBus(System.Func{Castle.MicroKernel.IKernel,MassTransit.IBusControl})">
+            <summary>
+            Add the bus to the container, configured properly
+            </summary>
+            <param name="busFactory"></param>
+        </member>
+        <member name="T:MassTransit.WindsorIntegration.Pipeline.WindsorMessageScopeFilter">
+            <summary>
+            Calls by the inbound message pipeline to begin and end a message scope
+            in the container.
+            </summary>
+        </member>
+        <member name="T:MassTransit.WindsorContainerExtensions">
+            <summary>
+            Extension methods for the Windsor IoC container.
+            </summary>
+        </member>
+        <member name="M:MassTransit.WindsorContainerExtensions.LoadFrom(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Specify that the service bus should load its subscribers from the container passed as an argument.
+            </summary>
+            <param name="configurator">The configurator the extension method works on.</param>
+            <param name="container">The Windsor container.</param>
+        </member>
+        <member name="M:MassTransit.WindsorContainerExtensions.LoadFrom(MassTransit.IReceiveEndpointConfigurator,Castle.MicroKernel.IKernel)">
+            <summary>
+            Specify that the service bus should load its subscribers from the container passed as an argument.
+            </summary>
+            <param name="configurator">The configurator the extension method works on.</param>
+            <param name="kernel">The Windsor container.</param>
+        </member>
+        <member name="M:MassTransit.WindsorContainerExtensions.RegisterInMemorySagaRepository(Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Registers the InMemory saga repository for all saga types (generic, can be overridden)
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:MassTransit.WindsorContainerExtensions.RegisterInMemorySagaRepository``1(Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Register the InMemory saga repository for the specified saga type
+            </summary>
+            <param name="container"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MassTransit.WindsorContainerExtensions.EnableMessageScope(MassTransit.IConsumePipeConfigurator)">
+            <summary>
+            Enables message scope lifetime for windsor containers
+            </summary>
+            <param name="configurator"></param>
+        </member>
+        <member name="M:MassTransit.WindsorContainerExtensions.UseMessageScope(MassTransit.IConsumePipeConfigurator)">
+            <summary>
+            Enables message scope lifetime for windsor containers
+            </summary>
+            <param name="configurator"></param>
+        </member>
+        <member name="M:MassTransit.WindsorReceiveEndpointExtensions.Consumer``1(MassTransit.IReceiveEndpointConfigurator,Castle.MicroKernel.IKernel,System.Action{MassTransit.ConsumeConfigurators.IConsumerConfigurator{``0}})">
+            <summary>
+            Registers a consumer given the lifetime scope specified
+            </summary>
+            <typeparam name="T">The consumer type</typeparam>
+            <param name="configurator">The service bus configurator</param>
+            <param name="kernel">The LifetimeScope of the container</param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MassTransit.WindsorReceiveEndpointExtensions.Consumer``1(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Action{MassTransit.ConsumeConfigurators.IConsumerConfigurator{``0}})">
+            <summary>
+            Registers a consumer given the lifetime scope specified
+            </summary>
+            <typeparam name="T">The consumer type</typeparam>
+            <param name="configurator">The service bus configurator</param>
+            <param name="container">The LifetimeScope of the container</param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MassTransit.WindsorReceiveEndpointExtensions.Saga``1(MassTransit.IReceiveEndpointConfigurator,Castle.MicroKernel.IKernel,System.Action{MassTransit.ISagaConfigurator{``0}})">
+            <summary>
+            Registers a saga using the container that has the repository resolved from the container
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="configurator"></param>
+            <param name="kernel"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MassTransit.WindsorReceiveEndpointExtensions.Saga``1(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Action{MassTransit.ISagaConfigurator{``0}})">
+            <summary>
+            Registers a saga using the container that has the repository resolved from the container
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="configurator"></param>
+            <param name="container"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MassTransit.WindsorRegistrationExtensions">
+            <summary>
+            Standard registration extensions, which are used to configure consumers, sagas, and activities on receive endpoints from a
+            dependency injection container.
+            </summary>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.AddMassTransit(Castle.Windsor.IWindsorContainer,System.Action{MassTransit.WindsorIntegration.IWindsorContainerConfigurator})">
+            <summary>
+            Adds the required services to the service collection, and allows consumers to be added and/or discovered
+            </summary>
+            <param name="container"></param>
+            <param name="configure"></param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureEndpoints``1(``0,Castle.Windsor.IWindsorContainer,MassTransit.IEndpointNameFormatter)">
+            <summary>
+            Configure the endpoints for all defined consumer, saga, and activity types using an optional
+            endpoint name formatter. If no endpoint name formatter is specified and an <see cref="T:MassTransit.IEndpointNameFormatter"/>
+            is registered in the container, it is resolved from the container. Otherwise, the <see cref="T:MassTransit.Definition.DefaultEndpointNameFormatter"/>
+            is used.
+            </summary>
+            <param name="configurator">The <see cref="T:MassTransit.IBusFactoryConfigurator"/> for the bus being configured</param>
+            <param name="container">The container reference</param>
+            <param name="endpointNameFormatter">Optional, the endpoint name formatter</param>
+            <typeparam name="T">The bus factory type (depends upon the transport)</typeparam>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureConsumer(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Type[])">
+            <summary>
+            Configure a consumer (or consumers) on the receive endpoint
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+            <param name="consumerTypes">The consumer type(s) to configure</param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureConsumer``1(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Action{MassTransit.ConsumeConfigurators.IConsumerConfigurator{``0}})">
+            <summary>
+            Configure a consumer on the receive endpoint, with an optional configuration action
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+            <param name="configure"></param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureConsumers(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Configure all registered consumers on the receive endpoint
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureSaga(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Type[])">
+            <summary>
+            Configure a saga (or sagas) on the receive endpoint
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+            <param name="sagaTypes">The saga type(s) to configure</param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureSaga``1(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Action{MassTransit.ISagaConfigurator{``0}})">
+            <summary>
+            Configure a saga on the receive endpoint, with an optional configuration action
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+            <param name="configure"></param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureSagas(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Configure all registered sagas on the receive endpoint
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureExecuteActivity(MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Type)">
+            <summary>
+            Configure the execute activity on the receive endpoint
+            </summary>
+            <param name="configurator"></param>
+            <param name="container"></param>
+            <param name="activityType"></param>
+        </member>
+        <member name="M:MassTransit.WindsorRegistrationExtensions.ConfigureActivity(MassTransit.IReceiveEndpointConfigurator,MassTransit.IReceiveEndpointConfigurator,Castle.Windsor.IWindsorContainer,System.Type)">
+            <summary>
+            Configure an activity on two endpoints, one for execute, and the other for compensate
+            </summary>
+            <param name="executeEndpointConfigurator"></param>
+            <param name="compensateEndpointConfigurator"></param>
+            <param name="container"></param>
+            <param name="activityType"></param>
+        </member>
+    </members>
+</doc>

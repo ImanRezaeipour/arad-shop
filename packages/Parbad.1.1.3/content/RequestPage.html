@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Parbad Gateway</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <style type="text/css">
+        body {
+            margin-top: 30px;
+        }
+
+        .panel-title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Parbad Virtual Gateway</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="#ParbadGatewayUrl#" method="post" role="form">
+                            <input name="commandType" value="Pay" type="hidden" />
+                            <input name="orderNumber" value="#OrderNumber#" type="hidden" />
+                            <input name="amount" value="#Amount#" type="hidden" />
+                            <input name="redirectUrl" value="#RedirectUrl#" type="hidden" />
+                            <input name="isPayed" id="isPayed" value="false" type="hidden" />
+
+                            <div class="form-group">
+                                <label class="control-label">Order number</label>
+                                <p class="form-control-static">#DisplayOrderNumber#</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Amount</label>
+                                <p class="form-control-static">#DisplayAmount#</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <div class="input-group">
+                                    <input id="password" name="password" type="password" class="form-control" />
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                </div>
+                                <span class="help-block">
+                                    <i class="glyphicon glyphicon-info-sign"></i>
+                                    Enter the password of Parbad Virtual Gateway.
+                                </span>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block" onclick="return pay()">Pay</button>
+                            <br />
+                            <button type="submit" class="btn btn-danger btn-block" onclick="return cancelPay()">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var isPasswordRequired = #IsPasswordRequired#;
+
+        var passwordInput = $("#password");
+        var passwordFormGroup = passwordInput.parents(".form-group");
+
+        if (!isPasswordRequired) {
+            passwordFormGroup.remove();
+        }
+
+        function isNullOrWhiteSpace(value) {
+            return value.replace(/\s/g, "").length < 1;
+        }
+
+        function pay() {
+
+            if (!isPasswordRequired || (isPasswordRequired && !isNullOrWhiteSpace(passwordInput.val()))) {
+                $("#isPayed").val("true");
+                return true;
+            }
+
+            if (!passwordFormGroup.hasClass("has-error")) {
+                passwordFormGroup.addClass("has-error");
+            }
+
+            passwordInput.focus();
+
+            return false;
+        }
+
+        function cancelPay() {
+            $("#isPayed").val("false");
+            return true;
+        }
+    </script>
+</body>
+</html>

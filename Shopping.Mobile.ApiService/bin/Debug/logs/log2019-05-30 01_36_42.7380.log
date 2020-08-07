@@ -1,0 +1,92 @@
+2019-05-30 01:36:42.7380|ERROR|Shopping.Mobile.ApiService.Program|System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> MassTransit.RabbitMqTransport.RabbitMqConnectionException: Broker unreachable: p.sahebi@192.69.216.135:5672/ ---> RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable ---> System.AggregateException: One or more errors occurred. ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.69.216.135:5672
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+   at RabbitMQ.Client.TcpClientAdapter.<ConnectAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at RabbitMQ.Client.Impl.TaskExtensions.<TimeoutAfter>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, Int32 timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, Int32 timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, Int32 connectionTimeout, Int32 readTimeout, Int32 writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IList`1 hostnames, String clientProvidedName)
+   at MassTransit.RabbitMqTransport.Integration.ConnectionContextFactory.<CreateConnection>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at MassTransit.RabbitMqTransport.Integration.ConnectionContextFactory.<CreateConnection>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.RabbitMqTransport.Integration.ConnectionContextFactory.<CreateSharedConnection>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at GreenPipes.Agents.PipeContextSupervisor`1.<GreenPipes-IPipeContextSource<TContext>-Send>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at GreenPipes.Agents.PipeContextSupervisor`1.<GreenPipes-IPipeContextSource<TContext>-Send>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at GreenPipes.Agents.PipeContextSupervisor`1.<GreenPipes-IPipeContextSource<TContext>-Send>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.RabbitMqTransport.Transport.RabbitMqReceiveTransport.<<Receiver>b__13_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.Transports.StartHostHandle.<ReadyOrNot>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.MassTransitBus.Handle.<ReadyOrNot>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.MassTransitBus.<StartAsync>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at MassTransit.RabbitMqTransport.Transport.RabbitMqReceiveTransport.<<Receiver>b__13_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.Policies.PipeRetryExtensions.<Attempt>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at MassTransit.MassTransitBus.<StartAsync>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MassTransit.Util.TaskUtil.Await[T](Func`1 taskFactory, CancellationToken cancellationToken)
+   at MassTransit.BusControlExtensions.Start(IBusControl busControl)
+   at Shopping.Mobile.ApiService.BusConfigs.BusConfiguratorService.Configure() in D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Mobile.ApiService\App_Start\BusConfigs\BusConfiguratorService.cs:line 21
+   at Shopping.Mobile.ApiService.Startup.Configuration(IAppBuilder app) in D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Mobile.ApiService\Startup.cs:line 49
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Owin.Loader.DefaultLoader.<>c__DisplayClass12.<MakeDelegate>b__b(IAppBuilder builder)
+   at Owin.Loader.DefaultLoader.<>c__DisplayClass1.<LoadImplementation>b__0(IAppBuilder builder)
+   at Microsoft.Owin.Hosting.Engine.HostingEngine.ResolveApp(StartContext context)
+   at Microsoft.Owin.Hosting.Engine.HostingEngine.Start(StartContext context)
+   at Microsoft.Owin.Hosting.Starter.DirectHostingStarter.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.Starter.HostingStarter.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.StartImplementation(IServiceProvider services, StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start[TStartup](StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start[TStartup](String url)
+   at Shopping.Mobile.ApiService.ApiStart.Start() in D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Mobile.ApiService\App_Start\ApiStart.cs:line 12
+   at Shopping.Mobile.ApiService.Program.<>c.<Main>b__0_5(ApiStart tc) in D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Mobile.ApiService\Program.cs:line 20
+   at Topshelf.ServiceConfiguratorExtensions.<>c__DisplayClass2_0`1.<WhenStarted>b__0(T service, HostControl control)
+   at Topshelf.Builders.DelegateServiceBuilder`1.DelegateServiceHandle.Start(HostControl hostControl)
+   at Topshelf.Hosts.ConsoleRunHost.Run()
+2019-05-30 01:36:42.7380|ERROR|Topshelf.Hosts.ConsoleRunHost|An exception occurred

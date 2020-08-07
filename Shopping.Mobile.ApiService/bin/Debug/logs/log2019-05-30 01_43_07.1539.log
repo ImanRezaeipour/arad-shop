@@ -1,0 +1,23 @@
+2019-05-30 01:43:07.1539|ERROR|Shopping.Mobile.ApiService.Program|System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.HttpListenerException: The format of the specified network name is invalid
+   at System.Net.HttpListener.AddAllPrefixes()
+   at System.Net.HttpListener.Start()
+   at Microsoft.Owin.Host.HttpListener.OwinHttpListener.Start(HttpListener listener, Func`2 appFunc, IList`1 addresses, IDictionary`2 capabilities, Func`2 loggerFactory)
+   at Microsoft.Owin.Host.HttpListener.OwinServerFactory.Create(Func`2 app, IDictionary`2 properties)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Owin.Hosting.ServerFactory.ServerFactoryAdapter.Create(IAppBuilder builder)
+   at Microsoft.Owin.Hosting.Engine.HostingEngine.StartServer(StartContext context)
+   at Microsoft.Owin.Hosting.Engine.HostingEngine.Start(StartContext context)
+   at Microsoft.Owin.Hosting.Starter.DirectHostingStarter.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.Starter.HostingStarter.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.StartImplementation(IServiceProvider services, StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start[TStartup](StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start[TStartup](String url)
+   at Shopping.Mobile.ApiService.ApiStart.Start() in D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Mobile.ApiService\App_Start\ApiStart.cs:line 12
+   at Shopping.Mobile.ApiService.Program.<>c.<Main>b__0_5(ApiStart tc) in D:\Project\Web\Arad-new\V2\Shopper\Shopping\Shopping.Mobile.ApiService\Program.cs:line 20
+   at Topshelf.ServiceConfiguratorExtensions.<>c__DisplayClass2_0`1.<WhenStarted>b__0(T service, HostControl control)
+   at Topshelf.Builders.DelegateServiceBuilder`1.DelegateServiceHandle.Start(HostControl hostControl)
+   at Topshelf.Hosts.ConsoleRunHost.Run()
